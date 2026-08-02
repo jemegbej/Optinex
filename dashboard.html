@@ -1,1 +1,825 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>OPTINEX Dashboard</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<link rel="stylesheet"
+href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Poppins',sans-serif;
+}
+
+body{
+
+background:#F4FAFF;
+color:#222;
+
+}
+
+.container{
+
+max-width:1200px;
+margin:auto;
+padding:20px 18px 120px;
+
+}
+
+.header{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+margin-bottom:25px;
+
+}
+
+.logo{
+
+font-size:34px;
+font-weight:800;
+color:#1DA1F2;
+
+}
+
+.profile{
+
+width:52px;
+height:52px;
+border-radius:50%;
+background:#1DA1F2;
+display:flex;
+justify-content:center;
+align-items:center;
+color:#fff;
+font-size:22px;
+
+}
+
+.greeting{
+
+color:#777;
+font-size:15px;
+
+}
+
+.username{
+
+font-size:30px;
+font-weight:700;
+margin-top:5px;
+
+}
+
+.balance-card{
+
+margin-top:25px;
+
+background:linear-gradient(135deg,#20C4FF,#1DA1F2);
+
+border-radius:25px;
+
+padding:25px;
+
+color:white;
+
+box-shadow:0 18px 40px rgba(0,153,255,.25);
+
+}
+
+.balance-top{
+
+display:flex;
+justify-content:space-between;
+align-items:center;
+
+}
+
+.balance-title{
+
+font-size:15px;
+opacity:.9;
+
+}
+
+.eye{
+
+cursor:pointer;
+font-size:20px;
+
+}
+
+.balance{
+
+font-size:42px;
+font-weight:800;
+margin:18px 0;
+
+}
+
+.member{
+
+display:inline-block;
+padding:7px 18px;
+border-radius:50px;
+background:white;
+color:#1DA1F2;
+font-weight:700;
+font-size:13px;
+
+}
+
+.actions{
+
+margin-top:25px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+}
+
+.action{
+
+background:white;
+
+border-radius:20px;
+
+padding:18px;
+
+text-align:center;
+
+text-decoration:none;
+
+color:#1DA1F2;
+
+font-weight:700;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+}
+
+.action:hover{
+
+transform:translateY(-5px);
+
+}
+
+.action i{
+
+font-size:25px;
+
+margin-bottom:12px;
+
+display:block;
+
+}
+
+.status{
+
+margin-top:30px;
+
+background:white;
+
+padding:22px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.status h3{
+
+color:#1DA1F2;
+margin-bottom:10px;
+
+}
+
+.warning{
+
+display:inline-block;
+
+margin-top:15px;
+
+padding:8px 15px;
+
+border-radius:50px;
+
+background:#FFF4D6;
+
+color:#CC8A00;
+
+font-weight:700;
+
+}
+
+.stats{
+
+margin-top:30px;
+
+display:grid;
+
+grid-template-columns:repeat(4,1fr);
+
+gap:15px;
+
+}
+
+.stat{
+
+background:white;
+
+padding:20px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+text-align:center;
+
+}
+
+.stat i{
+
+font-size:28px;
+
+color:#1DA1F2;
+
+margin-bottom:10px;
+
+}
+
+.stat h2{
+
+font-size:26px;
+
+margin-bottom:5px;
+
+}
+
+.stat p{
+
+color:#666;
+
+font-size:14px;
+
+}
+
+.section-title{
+
+margin-top:40px;
+
+margin-bottom:20px;
+
+font-size:25px;
+
+color:#1DA1F2;
+
+font-weight:700;
+
+}.features{
+
+display:grid;
+
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+
+gap:18px;
+
+margin-top:20px;
+
+}
+
+.feature{
+
+background:white;
+
+border-radius:20px;
+
+padding:22px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+transition:.3s;
+
+cursor:pointer;
+
+}
+
+.feature:hover{
+
+transform:translateY(-8px);
+
+}
+
+.feature i{
+
+font-size:34px;
+
+color:#1DA1F2;
+
+margin-bottom:15px;
+
+}
+
+.feature h3{
+
+margin-bottom:10px;
+
+font-size:18px;
+
+color:#222;
+
+}
+
+.feature p{
+
+font-size:14px;
+
+color:#666;
+
+line-height:1.6;
+
+}
+
+.referral{
+
+margin-top:35px;
+
+background:white;
+
+padding:25px;
+
+border-radius:20px;
+
+box-shadow:0 10px 25px rgba(0,0,0,.08);
+
+}
+
+.ref-link{
+
+margin-top:15px;
+
+background:#EAF8FF;
+
+padding:15px;
+
+border-radius:12px;
+
+word-break:break-all;
+
+font-weight:600;
+
+color:#1DA1F2;
+
+}
+
+.copy-btn{
+
+margin-top:18px;
+
+width:100%;
+
+padding:15px;
+
+border:none;
+
+border-radius:40px;
+
+background:#1DA1F2;
+
+color:white;
+
+font-size:16px;
+
+font-weight:700;
+
+cursor:pointer;
+
+transition:.3s;
+
+}
+
+.copy-btn:hover{
+
+background:#0A89D8;
+
+}
+
+.bottom-nav{
+
+position:fixed;
+
+left:0;
+
+right:0;
+
+bottom:0;
+
+background:white;
+
+display:flex;
+
+justify-content:space-around;
+
+padding:16px;
+
+box-shadow:0 -5px 20px rgba(0,0,0,.08);
+
+}
+
+.bottom-nav a{
+
+text-decoration:none;
+  color:#666;
+
+font-size:13px;
+
+text-align:center;
+
+font-weight:600;
+
+}
+
+.bottom-nav i{
+
+display:block;
+
+font-size:22px;
+
+margin-bottom:6px;
+
+}
+
+.bottom-nav a.active{
+
+color:#1DA1F2;
+
+}
+
+@media(max-width:900px){
+
+.actions{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+.stats{
+
+grid-template-columns:repeat(2,1fr);
+
+}
+
+}
+
+@media(max-width:600px){
+
+.balance{
+
+font-size:34px;
+
+}
+
+.username{
+
+font-size:24px;
+
+}
+
+}
+
+</style>
+
+</head>
+
+<body>
+
+<div class="container">
+
+<div class="header">
+
+<div>
+
+<div class="logo">OPTINEX</div>
+
+<p class="greeting">Welcome Back</p>
+
+<h2 class="username" id="welcomeUser">
+
+Hi, Member 👋
+
+</h2>
+
+</div>
+
+<div class="profile">
+
+<i class="fas fa-user"></i>
+
+</div>
+
+</div>
+
+<div class="balance-card">
+
+<div class="balance-top">
+
+<div>
+
+<div class="balance-title">
+
+Total Balance
+
+</div>
+
+<div class="balance"
+
+id="balanceDisplay">
+
+₦15,000.00
+
+</div>
+
+<span class="member">
+
+PREMIUM MEMBER
+
+</span>
+
+</div>
+
+<div class="eye"
+
+onclick="toggleBalance()">
+
+<i class="fas fa-eye"></i>
+
+</div>
+
+</div>
+
+</div>
+<div class="actions">
+
+<a href="activation.html" class="action">
+    <i class="fas fa-bolt"></i>
+    Activate
+</a>
+
+<a href="activation.html" class="action">
+    <i class="fas fa-wallet"></i>
+    Withdraw
+</a>
+
+</div>
+
+Account Status
+
+</h3>
+
+<p>
+
+Pay the one-time <strong>₦15,000</strong> activation fee to unlock all OPTINEX features and start earning.
+
+</p>
+
+<span class="warning">
+
+Not Activated
+
+</span>
+
+</div>
+
+<div class="stats">
+
+<div class="stat">
+
+<i class="fas fa-wallet"></i>
+
+<h2>₦15k</h2>
+
+<p>Wallet</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fas fa-list-check"></i>
+
+<h2>10</h2>
+
+<p>Features</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fas fa-gift"></i>
+
+<h2>₦0</h2>
+
+<p>Bonus</p>
+
+</div>
+
+<div class="stat">
+
+<i class="fas fa-users"></i>
+
+<h2>0</h2>
+
+<p>Referrals</p>
+
+</div>
+
+</div>
+
+<h2 class="section-title">
+
+OPTINEX FEATURES
+
+</h2>
+<div class="features">
+
+<div class="feature">
+<i class="fas fa-lightbulb"></i>
+<h3>IdeaVault</h3>
+<p>Store and organize your ideas securely in one place.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-shield-alt"></i>
+<h3>TalentCore</h3>
+<p>Showcase your talents and connect with opportunities.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-star"></i>
+<h3>Review X</h3>
+<p>Rate services and products while earning rewards.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-briefcase"></i>
+<h3>Micro X</h3>
+<p>Complete micro jobs and earn daily income.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-comments"></i>
+<h3>Chat Desk</h3>
+<p>Connect with members and customer support instantly.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-book-open"></i>
+<h3>StoryRate</h3>
+<p>Read, write and rate inspiring stories.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-microphone"></i>
+<h3>Voice Tales</h3>
+<p>Listen to podcasts and voice stories from creators.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-credit-card"></i>
+<h3>BNPL</h3>
+<p>Buy now and pay later with flexible payment plans.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-robot"></i>
+<h3>OPTINEX AI</h3>
+<p>Use AI tools to improve productivity and creativity.</p>
+</div>
+
+<div class="feature">
+<i class="fas fa-link"></i>
+<h3>Connect</h3>
+<p>Network with people, businesses and opportunities.</p>
+</div>
+
+</div>
+
+<div class="referral">
+
+<h2 class="section-title" style="margin-top:0;">
+Referral Link
+</h2>
+
+<p>
+Invite your friends and grow your OPTINEX network.
+</p>
+
+<div class="ref-link" id="refLink">
+https://optinex.app/?ref=member001
+</div>
+
+<button class="copy-btn" onclick="copyReferral()">
+Copy Referral Link
+</button>
+
+</div>
+
+</div>
+
+<nav class="bottom-nav">
+
+<a href="#" class="active">
+<i class="fas fa-house"></i>
+Home
+</a>
+
+<a href="#">
+<i class="fas fa-wallet"></i>
+Wallet
+</a>
+
+<a href="#">
+<i class="fas fa-layer-group"></i>
+Features
+</a>
+
+<a href="#">
+<i class="fas fa-user"></i>
+Profile
+</a>
+
+</nav>
+
+<script>
+
+const nairaBalance = 15000;
+const rate = 2000;
+let showingEuro = false;
+
+const user = localStorage.getItem("optinexUser");
+const username = localStorage.getItem("optinexUsername");
+  if(user){
+document.getElementById("welcomeUser").innerHTML =
+"Hi, " + user + " 👋";
+}
+
+if(username){
+document.getElementById("refLink").innerHTML =
+"https://optinex.app/?ref=" + username;
+}
+
+function toggleBalance(){
+
+const display = document.getElementById("balanceDisplay");
+
+if(!showingEuro){
+
+display.innerHTML =
+"€" + (nairaBalance / rate).toFixed(2);
+
+showingEuro = true;
+
+}else{
+
+display.innerHTML =
+"₦" + nairaBalance.toLocaleString() + ".00";
+
+showingEuro = false;
+
+}
+
+}
+
+function copyReferral(){
+
+const username =
+localStorage.getItem("optinexUsername") || "member001";
+
+navigator.clipboard.writeText(
+"https://optinex.app/?ref=" + username
+);
+
+alert("Referral link copied successfully!");
+
+}
+
+</script>
+
+</body>
+  </html>
