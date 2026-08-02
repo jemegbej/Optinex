@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Glamour Activation</title>
+<title>Optinex Activation</title>
 <style>
 *{margin:0;padding:0;box-sizing:border-box;font-family:Poppins,sans-serif;}
 body{background:#f5f9ff;color:#222;padding:20px;}
@@ -29,10 +29,10 @@ button{width:100%;padding:15px;border:none;border-radius:50px;font-weight:700;cu
 <p>One-time activation fee</p><h1 class="gold big"> 15,000</h1>
 <button class="activate-btn" onclick="showPayment()">Activate Now </button>
 <a href="dashboard.html" class="later">Maybe Later</a></div></div>
-<div id="paymentPage" style="display:none;"><div class="card"><h1 class="gold">Optinex</h1><br><h2>SECURE PAYMENT</h2><p>Complete Your Payment</p><br><p>Activating: Optinex Premium Pass</p><br><p>Amount to Pay</p><h1 class="gold big"> 15,000</h1><br><p>Time Remaining</p><div id="paymentTimer" class="timer">5:00</div><br><p>Transfer 15,000 to the account below</p><div class="bank"><h3 class="gold">Paga</h3><p>Option 1</p><br><p>Account Number</p><h2>0365001762</h2><br><p>Account Name</p><strong>AYIRI JEMEGBE</strong><button class="copy-btn" onclick="copyPaga()">Copy Paga Details</button></div><p class="small">After transferring, tap the button below and send your receipt on WhatsApp.</p><button class="activate-btn" onclick="paymentMade()">I've Made Payment</button></div></div>
-<div id="proofPage" style="display:none;"><div class="card center"><h2>Verification In Progress</h2><br><p>Preparing secure verification channel...</p><br><div id="proofCountdown" class="timer">10</div><a id="whatsappBtn" class="whatsapp-btn" href="https://wa.me/2347086862033" target="_blank">Send Proof via WhatsApp</a></div></div></div>
+<div id="paymentPage" style="display:none;"><div class="card"><h1 class="gold">Optinex</h1><br><h2>SECURE PAYMENT</h2><p>Complete Your Payment</p><br><p>Activating: Optinex Premium Pass</p><br><p>Amount to Pay</p><h1 class="gold big"> 15,000</h1><br><p>Time Remaining</p><div id="paymentTimer" class="timer">5:00</div><br><p>Transfer 15,000 to the account below</p><div class="bank"><h3 class="gold">Paga</h3><p>Option 1</p><br><p>Account Number</p><h2>0456878121</h2><br><p>Account Name</p><strong>JOSHUA JEMEGBE</strong><button class="copy-btn" onclick="copyPaga()">Copy Paga Details</button></div><p class="small">After transferring, tap the button below and send your receipt on WhatsApp.</p><button class="activate-btn" onclick="paymentMade()">I've Made Payment</button></div></div>
+<div id="proofPage" style="display:none;"><div class="card center"><h2>Verification In Progress</h2><br><p>Preparing secure verification channel...</p><br><div id="proofCountdown" class="timer">10</div><a id="whatsappBtn" class="whatsapp-btn" href="https://wa.me/2348030783450" target="_blank">Send Proof via WhatsApp</a></div></div></div>
 <script>
 function showPayment(){document.getElementById('activatePage').style.display='none';document.getElementById('paymentPage').style.display='block';let t=300;const i=setInterval(()=>{let m=Math.floor(t/60),s=t%60;paymentTimer.innerHTML=m+':' +(s<10?'0':'')+s;t--;if(t<0){clearInterval(i);paymentTimer.innerHTML='Expired';}},1000);}
 function paymentMade(){paymentPage.style.display='none';proofPage.style.display='block';let w=10;const c=setInterval(()=>{proofCountdown.innerHTML=w;w--;if(w<0){clearInterval(c);whatsappBtn.style.display='block';}},1000);}
-function copyPaga(){navigator.clipboard.writeText("Paga\nAccount Number: 0365001762\nAccount Name: AYIRI JEMEGBE");alert("Paga details copied!");}
+function copyPaga(){navigator.clipboard.writeText("Paga\nAccount Number: 0456878121\nAccount Name: JOSHUA JEMEGBE");alert("Paga details copied!");}
 </script></body></html>
